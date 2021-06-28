@@ -10,6 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_06_28_125812) do
+
+  create_table "properties", force: :cascade do |t|
+    t.string "property_name"
+    t.integer "rent"
+    t.string "address"
+    t.integer "building_age"
+    t.string "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
