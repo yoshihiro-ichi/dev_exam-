@@ -36,20 +36,17 @@
     <%= form.text_field :note %>
   </div>
 <% end %>
-......................................................................................
-<%= form_with(model: @property, local: true) do |form| %>
-  <%= form.fields_for :nearest_stations do |nearest_station| %>
+.
+  <%= form_for :nearest_stations do |form| %>
     <div class="route">
-      <%= nearest_station.label :路線名 %><br>
-      <%= nearest_station.text_field :route_name %>
+      <%= form.label :路線名 %><br>
+      <%= form.text_field :route_name %>
     </div>
-      <%= nearest_station.label :駅名 %><br>
-      <%= nearest_station.text_field :station_name %>
+      <%= form.label :駅名 %><br>
+      <%= form.text_field :station_name %>
+    <div class="minutes_walk">
+      <%= form.label :徒歩分数 %><br>
+      <%= form.text_field :time %>分<br>
     </div>
-  <div class="minutes_walk">
-      <%= nearest_station.label :徒歩分数 %><br>
-      <%= nearest_station.text_field :time %>分<br>
-      </div>
+      <%= form.submit.properties_path '登録する' %>
   <% end %>
-      <%= form.submit '登録する' %>
-<% end %>

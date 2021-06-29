@@ -15,6 +15,7 @@ class PropertiesController < ApplicationController
     if @property.save
       redirect_to properties_path, notice: "物件を登録しました！"
     else
+    2.times { @property.nearest_stations.build }
     render :new
     end
   end
