@@ -35,9 +35,10 @@
     <%= form.label :備考 %>
     <%= form.text_field :note %>
   </div>
-<% end %>
-.
-  <%= form_for :nearest_stations do |form| %>
+  <% @sum = 1 %>
+  <%= form.fields_for :nearest_stations do |form| %>
+  <%= @sum %>
+  <% @sum += 1 %>
     <div class="route">
       <%= form.label :路線名 %><br>
       <%= form.text_field :route_name %>
@@ -48,5 +49,6 @@
       <%= form.label :徒歩分数 %><br>
       <%= form.text_field :time %>分<br>
     </div>
-      <%= form.submit.properties_path '登録する' %>
   <% end %>
+      <%= form.submit '登録する' %>
+<% end %>
